@@ -1,12 +1,26 @@
+import type { LinksFunction } from "@remix-run/node";
 import {
   Form,
   Links,
   Meta,
   Scripts,
   ScrollRestoration,
+  Outlet,
+  useLoaderData,
 } from "@remix-run/react";
 
+import appStylesHref from "./app.css";
+
+export const links: LinksFunction = () =>[
+  { rel: "stylesheet", href: appStylesHref },
+];
+
+export async function loader() {
+  return { data: 'Loading...' };
+}
+
 export default function App() {
+  const data= useLoaderData<typeof loader>();
   return (
     <html lang="en">
       <head>
@@ -43,6 +57,9 @@ export default function App() {
               </li>
             </ul>
           </nav>
+        </div>
+        <div id="detail">
+          <Outlet />
         </div>
 
         <ScrollRestoration />
