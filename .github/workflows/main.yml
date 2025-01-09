@@ -32,7 +32,7 @@ jobs:
           aws-region: us-west-1
 
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./build s3://${{ secrets.AWS_S3_BUCKET_NAME }}
+        run: aws s3 sync ./build/client s3://my-remix-events-app --delete
 
       - name: Invalidate CloudFront
         uses: chetan/invalidate-cloudfront-action@v2
