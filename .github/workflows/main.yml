@@ -32,10 +32,10 @@ jobs:
           aws-region: us-west-1
 
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./dist s3://my-remix-events-app
+        run: aws s3 sync ./public/build s3://my-remix-events-app --delete
 
       - name: Invalidate CloudFront
         uses: chetan/invalidate-cloudfront-action@v2
-        env:
-          DISTRIBUTION: "E3GYV8P6HYNEBM"
-          PATHS: "/*"
+        with:
+          distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+          paths: "/*"
