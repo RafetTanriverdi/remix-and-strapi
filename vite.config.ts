@@ -3,6 +3,9 @@ import { defineConfig } from "vite"
 import tsconfigPaths from "vite-tsconfig-paths"
 
 export default defineConfig({
+  build: {
+    outDir: "dist", // Default Vite output folder
+  },
   plugins: [
     remix({
       future: {
