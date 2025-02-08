@@ -9,6 +9,7 @@ import {
 import { ThemeProvider } from "next-themes"
 import { ChakraProvider } from "./components/chakra-provider"
 import { useInjectStyles } from "./emotion/emotion-client"
+import IndexLayout from "./routes/_layout"
 
 interface LayoutProps extends React.PropsWithChildren {}
 
@@ -42,7 +43,10 @@ export default function App() {
   return (
     <ChakraProvider>
       <ThemeProvider disableTransitionOnChange attribute="class">
+        <IndexLayout>
+
         <Outlet />
+        </IndexLayout>
       </ThemeProvider>
     </ChakraProvider>
   )

@@ -1,5 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import type { MetaFunction } from "@remix-run/node";
+import IndexLayout from "./_layout";
+import { Outlet } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,8 +10,12 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Index() {
-  return <Box textAlign="center" fontSize="xl" pt="30vh">
 
-  </Box>;
+export default function Index() {
+  return (
+    <IndexLayout>
+      <Box>Index</Box>
+      <Outlet />
+    </IndexLayout>
+  );
 }
