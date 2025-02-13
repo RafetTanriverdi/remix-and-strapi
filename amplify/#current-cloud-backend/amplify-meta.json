@@ -11,5 +11,48 @@
       "StackId": "arn:aws:cloudformation:us-east-2:895476881817:stack/amplify-remixeventsapp-dev-7be4c/3104df10-e301-11ef-8896-063f4c961fc9",
       "AmplifyAppId": "d3iwvy95m7fcx9"
     }
+  },
+  "auth": {
+    "remixeventsappffd236ab": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-remixeventsapp-dev-7be4c-deployment/amplify-cfn-templates/auth/remixeventsappffd236ab-cloudformation-template.json",
+        "logicalId": "authremixeventsappffd236ab"
+      },
+      "lastPushTimeStamp": "2025-02-11T18:28:07.479Z",
+      "output": {
+        "UserPoolId": "us-east-2_OIXDk69PG",
+        "AppClientIDWeb": "77vqguujkd9egajei5lpavpvgk",
+        "AppClientID": "629dhbrvgnbkt1oqescc38vgm3",
+        "IdentityPoolId": "us-east-2:be2f9830-f72a-493d-9f27-8f8e64fb50ac",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-2:895476881817:userpool/us-east-2_OIXDk69PG",
+        "IdentityPoolName": "remixeventsappffd236ab_identitypool_ffd236ab__dev",
+        "UserPoolName": "remixeventsappffd236ab_userpool_ffd236ab"
+      },
+      "lastPushDirHash": "KHjvZQd3kG+UVoXgf04RYg3AGN0="
+    }
   }
 }

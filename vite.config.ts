@@ -13,7 +13,7 @@ export default defineConfig({
         v3_throwAbortReason: true,
       
       },
-      ssr:false,
+//      ssr:false,
       routes(defineRoutes) {
         return flatRoutes("routes", defineRoutes,{
       ignoredRouteFiles:['**/.*'],

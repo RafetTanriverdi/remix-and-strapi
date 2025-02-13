@@ -10,7 +10,10 @@ import { ThemeProvider } from "next-themes"
 import { ChakraProvider } from "./components/chakra-provider"
 import { useInjectStyles } from "./emotion/emotion-client"
 import IndexLayout from "./routes/_layout"
+import {Amplify} from 'aws-amplify'
+import awsExports from '../src/aws-exports'
 
+Amplify.configure(awsExports)
 interface LayoutProps extends React.PropsWithChildren {}
 
 export const Layout = withEmotionCache((props: LayoutProps, cache) => {
